@@ -6,7 +6,6 @@
  */
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
-
 ?>
 <?php if ($model->status): ?>
 

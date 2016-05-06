@@ -22,7 +22,6 @@ class Node extends \yii\bootstrap\Widget
                 PostMeta::find()->where(['parent' => null])->orWhere(['parent' => 0])->orderBy(['order' => SORT_ASC])->all(),
                 'id', 'name'
             );
-
             foreach ($parents as $key => $value) {
                 $nodes[$value] = PostMeta::find()->where(['parent' => $key])->asArray()->all();
             }

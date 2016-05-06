@@ -86,7 +86,7 @@ class ActionController extends Controller
      * @param $id
      * @return array|string
      */
-    public function actionFollows($type, $id)
+    public function actionFollow($type, $id)
     {
         if ($type == 'topic') {
             $topicService = new TopicService();

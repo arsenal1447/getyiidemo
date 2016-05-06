@@ -64,6 +64,3 @@ if ($node = Yii::$app->request->getQueryParam('node')) {
     'node' => $node
 ]); ?>
 
-
-
-

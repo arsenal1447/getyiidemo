@@ -30,12 +30,10 @@ class NotificationService
      */
     public function newReplyNotify(User $fromUser, Topic $topic, PostComment $comment, $rawComment = '')
     {
-//         echo "<pre>";
         foreach ($topic->follower as $key => $value) {
-//             print_R($value);
             $users[$value->user_id] = $value->user_id;
         }
-//         die('38');
+
         // Notify mentioned users
         $this->batchNotify(
             'at',
@@ -43,7 +41,7 @@ class NotificationService
             $this->removeDuplication($comment->parse($rawComment)),
             $topic,
             $comment);
-        
+
         // 通知关注的用户
         //print_r($users);die;
         $this->batchNotify('new_comment', $fromUser, $this->removeDuplication($users), $topic, $comment);
